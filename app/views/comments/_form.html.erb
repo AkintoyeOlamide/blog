@@ -2,7 +2,7 @@
 
 <%= form_for [ @article, @comment ] do |f| %>
   <p>
-    <%= f.label :author_name %><br/>
+    <%= f.label :author_name, "Your Name" %><br/>
     <%= f.text_field :author_name %>
   </p>
   <p>
@@ -13,3 +13,5 @@
     <%= f.submit 'Submit' %>
   </p>
 <% end %>
+
+<p>Posted <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> later</p>
